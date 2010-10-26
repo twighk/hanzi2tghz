@@ -6,7 +6,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="hanzi2tghz/Mainfrm.cs" ctype="Workbench">
     <Files>
       <File FileName="hanzi2tghz/hanzi2tghz.cs" Line="18" Column="27" />
-      <File FileName="hanzi2tghz/Mainfrm.cs" Line="26" Column="1" />
+      <File FileName="hanzi2tghz/Mainfrm.cs" Line="1" Column="1" />
+      <File FileName="hanzi2tghz/Outputfrm.cs" Line="26" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
