@@ -16,11 +16,11 @@ public class Outputfrm : Form
 		//Button
 		Button reset = new Button();
 		reset.Text = "Reset";
-		reset.Parent = this;
+//		reset.Parent = this;
 		reset.Dock = DockStyle.Bottom;
-		reset.Anchor = AnchorStyles.Bottom;
+//		reset.Anchor = AnchorStyles.Bottom;
 		reset.Click += new EventHandler (this.ResetOnClick);
-		
+		this.Controls.Add(reset);
 		//Label
 		hzoutput = new TextBox();
 		hzoutput.Parent = this;
@@ -29,6 +29,7 @@ public class Outputfrm : Form
 		hzoutput.Multiline = true;
 		hzoutput.ScrollBars = ScrollBars.Both;
 		//hzinput.Padding = new Padding(5);
+		this.Controls.Add(hzoutput);
 	}
 	
 	void ResetOnClick(object sender, EventArgs e){
