@@ -66,7 +66,8 @@ public class Mainfrm : Form
 	}
 	void ConvOnClick(object sender, EventArgs e){
 		String output = converter.hz2pyLatex(hzinput.Text);
-		Application.Run(new Outputfrm(output));
+		Outputfrm outfrm =  new Outputfrm(output);
+		outfrm.ShowDialog();
 		Console.WriteLine(converter.hz2pyLatex(hzinput.Text));
 		//output = converter.hz2tones(hzinput.Text);
 		//Console.WriteLine(output);
