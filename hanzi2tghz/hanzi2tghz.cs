@@ -64,7 +64,7 @@ public class hanzi2tghz
 			dialog.Filter = "UTF-8 (*.u8)|*.u8|All Files (*.*)|*.*";
 			if((dialog.ShowDialog() == DialogResult.OK) && (dialog.FileName != string.Empty)){
 				cedictloc = dialog.FileName;
-				Console.WriteLine(dialog.FileName);
+				//Console.WriteLine(dialog.FileName);
 			} else {
 				Application.Exit();	
 			}
@@ -124,9 +124,9 @@ public class hanzi2tghz
 //		Console.WriteLine(longestword);
 		Console.WriteLine("Finished Dictionary.");
 		
-//		foreach (var pair in map){
-//			Console.WriteLine("{0}, {1}", pair.Key, pair.Value);	
-//		}
+		/*foreach (var pair in map){
+			Console.WriteLine("{0}, {1}", pair.Key, pair.Value);	
+		}*/
 	}
 	
 	public string hz2tones(string strin){
@@ -191,5 +191,25 @@ public class hanzi2tghz
 			strout += "0";	
 		}
 		return strout;
+	}
+	
+	public string hz2pywordxml (string strin){
+		List<string> tones = hz2py(strin);
+		string output = "";
+
+		output += data.wordxmlheader();
+
+		for(int i = 0; i != strin.Length; i++){
+			foreach(char c in tones[i]){
+				if (c != '0'){
+					output += data.withtone(strin[i].ToString(), int.Parse(c.ToString()));
+				} else {
+					output += data.notone(strin[i].ToString());
+				}
+			}			
+		}
+
+		output += data.wordxmlfooter();		
+		return output;
 	}
 }
