@@ -30,8 +30,10 @@ public class Outputfrm : Form
 		hzoutput.ScrollBars = ScrollBars.Both;
 		//hzinput.Padding = new Padding(5);
 		this.Controls.Add(hzoutput);
+		hzoutput.SelectAll();
+		hzoutput.HideSelection = false;
 	}
-	
+
 	void ResetOnClick(object sender, EventArgs e){
 		hzoutput.Text = original;
 	}
