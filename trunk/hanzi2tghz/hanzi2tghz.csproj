@@ -34,6 +34,7 @@
     <Compile Include="hanzi2tghz.cs" />
     <Compile Include="Mainfrm.cs" />
     <Compile Include="Outputfrm.cs" />
+    <Compile Include="data.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Windows.Forms" />

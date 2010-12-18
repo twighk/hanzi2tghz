@@ -17,10 +17,11 @@ public class Outputfrm : Form
 		Button reset = new Button();
 		reset.Text = "Reset";
 //		reset.Parent = this;
-		reset.Dock = DockStyle.Bottom;
-//		reset.Anchor = AnchorStyles.Bottom;
+//		reset.Dock = DockStyle.Bottom;
+		reset.Anchor = (AnchorStyles.Right | AnchorStyles.Left);
 		reset.Click += new EventHandler (this.ResetOnClick);
-		this.Controls.Add(reset);
+//		this.Controls.Add(reset);
+
 		//Label
 		hzoutput = new TextBox();
 		hzoutput.Parent = this;
@@ -32,6 +33,21 @@ public class Outputfrm : Form
 		this.Controls.Add(hzoutput);
 		hzoutput.SelectAll();
 		hzoutput.HideSelection = false;
+		
+		
+		TableLayoutPanel tlp = new TableLayoutPanel();
+		tlp.Dock = DockStyle.Fill;
+		tlp.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset;
+		tlp.AutoSize = false;
+		this.Controls.Add(tlp);
+		
+		tlp.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
+		tlp.RowCount = 2;
+		tlp.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+		tlp.RowStyles.Add(new RowStyle());
+		tlp.Controls.Add(hzoutput,0,0);
+		tlp.Controls.Add(reset,0,1);
+		
 	}
 
 	void ResetOnClick(object sender, EventArgs e){

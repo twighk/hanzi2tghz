@@ -3,17 +3,17 @@
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ActiveDocument="hanzi2tghz/Outputfrm.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="hanzi2tghz/Mainfrm.cs" ctype="Workbench">
     <Files>
       <File FileName="hanzi2tghz/hanzi2tghz.cs" Line="18" Column="27" />
-      <File FileName="hanzi2tghz/Mainfrm.cs" Line="34" Column="36" />
-      <File FileName="hanzi2tghz/Outputfrm.cs" Line="21" Column="38" />
+      <File FileName="hanzi2tghz/Mainfrm.cs" Line="73" Column="3" />
+      <File FileName="hanzi2tghz/Outputfrm.cs" Line="17" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="hanzi2tghz" expanded="True">
-            <Node name="Outputfrm.cs" selected="True" />
+            <Node name="Mainfrm.cs" selected="True" />
           </Node>
         </State>
       </Pad>
