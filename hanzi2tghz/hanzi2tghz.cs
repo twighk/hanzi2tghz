@@ -44,6 +44,7 @@ public class hanzi2tghz
 	}
 
 	private string cedictloc;
+	private string overwrite;
 	private int longestword;
 	private Dictionary <string,string> map;
 
@@ -57,7 +58,7 @@ public class hanzi2tghz
 		longestword = 0;
 		Console.WriteLine("Creating Dicionary ...");
 		map = new Dictionary<string, string>();
-		cedictloc = "cedict_ts.u8"; // Default location for dictionary
+cedictloc = "cedict_ts.u8"; // Default location for dictionary
 		if(File.Exists(cedictloc) != true) {
 			OpenFileDialog dialog = new OpenFileDialog();
 			dialog.Title = "Open Dictionary ...";
@@ -123,6 +124,49 @@ public class hanzi2tghz
 		fin.Close();
 //		Console.WriteLine(longestword);
 		Console.WriteLine("Finished Dictionary.");
+overwrite = "ToneCorrections.txt"; // Default location for dictionary
+		
+		if(File.Exists(overwrite) != true) {
+			OpenFileDialog dialog = new OpenFileDialog();
+			dialog.Title = "Open Tone Corrections ...";
+			dialog.Filter = "UTF-8 (*.txt)|*.txt|All Files (*.*)|*.*";
+			if((dialog.ShowDialog() == DialogResult.OK) && (dialog.FileName != string.Empty)){
+				overwrite = dialog.FileName;
+				//Console.WriteLine(dialog.FileName);
+			} else {
+				overwrite = "";	
+			}
+		}
+
+		if (overwrite != ""){
+			FileStream finwr = new FileStream(overwrite, FileMode.Open);
+			StreamReader streamwr = new StreamReader(finwr, Encoding.UTF8);
+			
+			while ((line = streamwr.ReadLine()) != null){
+				if (line[0] == '#'){
+					continue;
+				} else {
+					string[] dictline = line.Split(new char[] {' '});
+					
+					string chars = dictline[0];
+					
+					string pinyin = "";
+					for(int i = 0; i != chars.Length; i++){
+						pinyin += pinyin2tones(dictline[1+i]) + " ";		
+					}
+					
+					if (!map.ContainsKey(chars)){
+						map.Add(chars, pinyin);
+					} else {
+						map[chars] = pinyin.Trim();
+					}
+				}
+			}
+			finwr.Close();
+		}
+
+		
+		
 		
 		/*foreach (var pair in map){
 			Console.WriteLine("{0}, {1}", pair.Key, pair.Value);	
