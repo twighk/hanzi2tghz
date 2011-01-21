@@ -41,7 +41,6 @@ public class Outputfrm : Form
 		tlp.AutoSize = false;
 		this.Controls.Add(tlp);
 		
-		tlp.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
 		tlp.RowCount = 2;
 		tlp.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
 		tlp.RowStyles.Add(new RowStyle());
