@@ -44,7 +44,6 @@ public class Mainfrm : Form
 		//Layout of group of radio buttons
 		TableLayoutPanel grptlp = new TableLayoutPanel();
 		grptlp.Anchor = (AnchorStyles.Right | AnchorStyles.Left);
-		grptlp.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
 		grptlp.ColumnCount = 2;
 		grptlp.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset;
 		grptlp.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
@@ -66,7 +65,6 @@ public class Mainfrm : Form
 		tlp.AutoSize = false;
 		this.Controls.Add(tlp);
 		
-		tlp.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
 		tlp.RowCount = 3;
 		tlp.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
 		tlp.RowStyles.Add(new RowStyle());
