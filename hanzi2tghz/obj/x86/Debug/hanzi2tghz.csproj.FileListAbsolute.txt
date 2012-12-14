@@ -1,0 +1,5 @@
+C:\Users\tcb06\Desktop\hanzi2tghz\hanzi2tghz\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\tcb06\Desktop\hanzi2tghz\hanzi2tghz\bin\Debug\hanzi2tghz.exe
+C:\Users\tcb06\Desktop\hanzi2tghz\hanzi2tghz\bin\Debug\hanzi2tghz.pdb
+C:\Users\tcb06\Desktop\hanzi2tghz\hanzi2tghz\obj\x86\Debug\hanzi2tghz.exe
+C:\Users\tcb06\Desktop\hanzi2tghz\hanzi2tghz\obj\x86\Debug\hanzi2tghz.pdb
