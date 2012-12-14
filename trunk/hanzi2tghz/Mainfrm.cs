@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.IO;
 using System.Text;
+using System.Threading;
 
 public class Mainfrm : Form
 {
@@ -81,8 +82,9 @@ public class Mainfrm : Form
 		OpenFileDialog dialog = new OpenFileDialog();
 		dialog.Title = "Import File ...";
 		dialog.Filter = "All files (*.*)|*.*";
-		
-		if (dialog.ShowDialog() == DialogResult.OK){
+
+        DialogResult ret = STAShowDialog(dialog);
+		if (ret == DialogResult.OK){
 			if(dialog.FileName == string.Empty){
 				return;
 			} else {
@@ -117,12 +119,16 @@ public class Mainfrm : Form
 			DialogSave.Title = "Save Word document as ...";
 			DialogSave.OverwritePrompt = true;
 			DialogSave.FileName = "hanzi2tghz-tmp";
-			if (DialogSave.ShowDialog() == DialogResult.OK)
-			{
-				StreamWriter outfile = new StreamWriter(DialogSave.FileName);
-				outfile.Write(converter.hz2pywordxml(hzinput.Text));
-				outfile.Close();
-			}
+
+
+            DialogResult ret = STAShowDialog(DialogSave);
+
+            if (ret == DialogResult.OK){
+                    StreamWriter outfile = new StreamWriter(DialogSave.FileName);
+                    outfile.Write(converter.hz2pywordxml(hzinput.Text));
+                    outfile.Close();
+                }
+           
 			
 			DialogSave.Dispose();
 			DialogSave = null;
@@ -132,5 +138,37 @@ public class Mainfrm : Form
 	void CallFrmResize(object sender, EventArgs e){FrmResize();}
 	void FrmResize(){
 	}
+
+    private DialogResult STAShowDialog(FileDialog dialog)
+        {
+            DialogState state = new DialogState();
+            state.dialog = dialog;
+            System.Threading.Thread t = new System.Threading.Thread(state.ThreadProcShowDialog);
+            t.SetApartmentState(System.Threading.ApartmentState.STA);
+            t.Start();
+            t.Join();
+            return state.result;
+        }
+
+
+ public class DialogState
+
+    {
+
+        public DialogResult result;
+
+        public FileDialog dialog;
+
+
+        public void ThreadProcShowDialog()
+
+        {
+
+            result = dialog.ShowDialog();
+
+        }
+
+    }
+    
 }
 
