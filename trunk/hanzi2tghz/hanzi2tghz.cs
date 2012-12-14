@@ -143,24 +143,35 @@ overwrite = "ToneCorrections.txt"; // Default location for dictionary
 			StreamReader streamwr = new StreamReader(finwr, Encoding.UTF8);
 			
 			while ((line = streamwr.ReadLine()) != null){
-				if (line[0] == '#'){
-					continue;
-				} else {
-					string[] dictline = line.Split(new char[] {' '});
-					
-					string chars = dictline[0];
-					
-					string pinyin = "";
-					for(int i = 0; i != chars.Length; i++){
-						pinyin += pinyin2tones(dictline[1+i]) + " ";		
-					}
-					
-					if (!map.ContainsKey(chars)){
-						map.Add(chars, pinyin);
-					} else {
-						map[chars] = pinyin.Trim();
-					}
-				}
+                try
+                {
+                    if (line[0] == '#')
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        string[] dictline = line.Split(new char[] { ' ' });
+
+                        string chars = dictline[0];
+
+                        string pinyin = "";
+                        for (int i = 0; i != chars.Length; i++)
+                        {
+                            pinyin += pinyin2tones(dictline[1 + i]) + " ";
+                        }
+
+                        if (!map.ContainsKey(chars))
+                        {
+                            map.Add(chars, pinyin);
+                        }
+                        else
+                        {
+                            map[chars] = pinyin.Trim();
+                        }
+                    }
+                }
+                catch { }
 			}
 			finwr.Close();
 		}
