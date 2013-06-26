@@ -3,18 +3,19 @@
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ActiveDocument="hanzi2tghz/hanzi2tghz.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="hanzi2tghz/Mainfrm.cs">
     <Files>
-      <File FileName="hanzi2tghz/hanzi2tghz.cs" Line="161" Column="34" />
-      <File FileName="hanzi2tghz/Mainfrm.cs" Line="86" Column="1" />
-      <File FileName="hanzi2tghz/Outputfrm.cs" Line="43" Column="3" />
-      <File FileName="hanzi2tghz/data.cs" Line="125" Column="4" />
+      <File FileName="hanzi2tghz/hanzi2tghz.cs" Line="62" Column="35" />
+      <File FileName="hanzi2tghz/Mainfrm.cs" Line="6" Column="24" />
+      <File FileName="hanzi2tghz/Outputfrm.cs" Line="1" Column="1" />
+      <File FileName="hanzi2tghz/data.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="hanzi2tghz" expanded="True">
-            <Node name="hanzi2tghz.cs" selected="True" />
+            <Node name="References" expanded="True" />
+            <Node name="Mainfrm.cs" selected="True" />
           </Node>
         </State>
       </Pad>
