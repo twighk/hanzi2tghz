@@ -24,16 +24,19 @@ public class hanzi2tghz
 		output += "\\begin{CJK*}{UTF8}{gbsn}\n\n";
 
 		for(int i = 0; i != strin.Length; i++){
-			output += @"\ac{";
-			foreach(char c in tones[i]){
-				if (c != '0'){
-					output += @"\" + c;	
+			if(tones[i].Length > 0 && tones[i][0] != '0'){
+				output += @"\ac{";
+				foreach(char c in tones[i]){
+					if (c != '0'){
+						output += @"\" + c;	
+					}
 				}
+				output += @"}{";
+				output += strin[i];
+				output += @"}";
+				} else {
+				output += strin[i];
 			}
-			output += @"}{";
-			output += strin[i];
-			output += @"}";
-			
 		}
 
 		output += "\n\\end{CJK*}\n"; 
@@ -56,7 +59,7 @@ public class hanzi2tghz
 	
 	public hanzi2tghz (){
 		longestword = 0;
-		Console.WriteLine("Creating Dicionary ...");
+		Console.WriteLine("Creating Dictionary ...");
 		map = new Dictionary<string, string>();
 cedictloc = "cedict_ts.u8"; // Default location for dictionary
 		if(File.Exists(cedictloc) != true) {
