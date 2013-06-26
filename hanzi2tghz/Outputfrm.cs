@@ -15,7 +15,7 @@ public class Outputfrm : Form
 		
 		//Button
 		Button reset = new Button();
-		reset.Text = "Reset";
+		reset.Text = "Reset & Write to Console";
 //		reset.Parent = this;
 //		reset.Dock = DockStyle.Bottom;
 		reset.Anchor = (AnchorStyles.Right | AnchorStyles.Left);
@@ -51,6 +51,7 @@ public class Outputfrm : Form
 
 	void ResetOnClick(object sender, EventArgs e){
 		hzoutput.Text = original;
+		System.Console.Write(original);
 	}
 	
 	void CallFrmResize(object sender, EventArgs e){;}
