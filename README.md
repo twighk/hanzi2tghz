@@ -9,14 +9,14 @@ For a much improved version for Microsoft Word as an add-in, goto the [Chinese A
 
 ##Usage
 1. Make a new folder for hanzi2tghz.
-2. Download the latest [hanzi2tghz Executable](https://code.google.com/p/hanzi2tghz/downloads/list), and put it in the hanzi2tghz folder.
-3. Download the [Tone Corrections File](https://code.google.com/p/hanzi2tghz/downloads/list), and put it in the hanzi2tghz folder.
+2. Download the latest [hanzi2tghz Executable](https://raw.githubusercontent.com/twighk/hanzi2tghz/master/hanzi2tghz/bin/Debug/hanzi2tghz.exe), and put it in the hanzi2tghz folder.
+3. Download the [Tone Corrections File](https://raw.githubusercontent.com/twighk/hanzi2tghz/master/hanzi2tghz/bin/Debug/ToneCorrections.txt), and put it in the hanzi2tghz folder.
 4. Download the UTF-8 version of the [Dictionary](http://www.mdbg.net/chindict/chindict.php?page=cedict), extract the zip file, and copy the cedict_ts.u8 to the hanzi2tghz folder.
 5. The folder should now have three files in it (hanzi2tghz, ToneCorrections & cedict_ts.u8).
 6. Double click the hanzi2tghz program.
 7. Paste some Chinese text into the white box. 
 8. Choose Word or LaTeX, and click convert.
-9. If the program does not do what you expect, or you find bugs, please write about them in the [issues](https://code.google.com/p/hanzi2tghz/issues/list), or if you have feature requests or comments, put them there as well or [email me](http://www.google.com/recaptcha/mailhide/d?k=01NPKkqVdpvGCxT19t2FK-Zw==&c=nCA8B1q_gIq9ORG1LB4DfW-z0SdUwQXlicZ-lR7pil8= ). Thank-you 
+9. If the program does not do what you expect, or you find bugs, please write about them in the [issues](https://github.com/twighk/hanzi2tghz/issues), or if you have feature requests or comments, put them there as well or [email me](http://www.google.com/recaptcha/mailhide/d?k=01NPKkqVdpvGCxT19t2FK-Zw==&c=nCA8B1q_gIq9ORG1LB4DfW-z0SdUwQXlicZ-lR7pil8= ). Thank-you 
 If you are using the Word output, and are finding that it cannot decide on which tone to uses for common characters, edit the ToneCorrections file to have the chinese word, followed by a space, and then the pinyin with numbers, separated by spaces. For example: 
 ```
 的 de5
