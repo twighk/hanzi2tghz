@@ -49,8 +49,8 @@ To use the Microsoft Word file output (.XML)
   * Microsoft Word 2007 or 2010 is needed
 
 To use the LaTeX output you need 
-  * [http://www.latex-project.org/ LaTeX]
-  * [http://www.ctan.org/tex-archive/language/chinese/CJK/ CJK Package]
+  * [LaTeX](http://www.latex-project.org/)
+  * [CJK Package](http://www.ctan.org/tex-archive/language/chinese/CJK/)
 
 
 ----
